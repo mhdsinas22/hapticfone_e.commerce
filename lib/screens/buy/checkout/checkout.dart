@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:hapticfone/colors/appcolors.dart';
+import 'package:hapticfone/controllers/radiowidgetcontroller.dart';
+import 'package:hapticfone/screens/buy/order_details.dart';
 import 'package:hapticfone/texts/address_text.dart';
 import 'package:hapticfone/texts/phonedetils_text.dart';
 import 'package:hapticfone/widgets/appbar_customized.dart';
@@ -14,6 +17,7 @@ class Checkout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final rediocontroller = Get.put(Radiowidgetcontroller());
     int selectedvalue = 1;
     return Scaffold(
       appBar: Appbarcustomized(
@@ -29,7 +33,9 @@ class Checkout extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(8.r),
               child: RectangleContainer(
-                boxDecoration: BoxDecoration(border: Border.all()),
+                boxDecoration: BoxDecoration(
+                  border: Border.all(color: Appcolors.mygreen),
+                ),
                 child: Column(
                   children: [
                     SizedBox(height: 10),
@@ -112,13 +118,16 @@ class Checkout extends StatelessWidget {
                         ),
                       ],
                     ),
-                    RedioWidget(
-                      value: 1,
-                      selectvalue: selectedvalue,
-                      title: "Online Payment",
+                    Obx(
+                      () => RedioWidget(
+                        value:
+                            rediocontroller.selectedredio.value ? false : true,
+                        selectvalue: selectedvalue,
+                        title: "Online Payment",
+                      ),
                     ),
                     RedioWidget(
-                      value: 2,
+                      value: rediocontroller.selectedredio.value,
                       selectvalue: selectedvalue,
                       title: "Cash On Delivery",
                     ),
@@ -128,13 +137,18 @@ class Checkout extends StatelessWidget {
             ),
             CashtotalContainer(),
             SizedBox(height: 10.h),
-            TextbuttonCustomized(
-              heigth: 62.h,
-              width: 320.w,
-              text: "Place Order",
-              onpressed: () {},
-              textStyle: TextStyle(fontSize: 20.sp, color: Colors.white),
-              boxDecoration: BoxDecoration(color: Appcolors.appbuttongreen),
+            Padding(
+              padding: EdgeInsets.all(10.r),
+              child: TextbuttonCustomized(
+                heigth: 52.h,
+                width: 300.w,
+                text: "Place Order",
+                onpressed: () {
+                  Get.offAll(OrderDetails());
+                },
+                textStyle: TextStyle(fontSize: 20.sp, color: Colors.white),
+                boxDecoration: BoxDecoration(color: Appcolors.appbuttongreen),
+              ),
             ),
           ],
         ),

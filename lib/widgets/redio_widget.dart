@@ -5,7 +5,7 @@ import 'package:hapticfone/colors/appcolors.dart';
 class RedioWidget extends StatelessWidget {
   final int selectvalue;
   final String title;
-  final int value;
+  final bool value;
   const RedioWidget({
     super.key,
     required this.selectvalue,
