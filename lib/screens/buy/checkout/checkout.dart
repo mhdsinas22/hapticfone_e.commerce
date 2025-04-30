@@ -64,37 +64,7 @@ class Checkout extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(8.r),
-              child: Material(
-                elevation: 10,
-                child: RectangleContainer(
-                  boxDecoration: BoxDecoration(color: Colors.white),
-                  child: Column(
-                    children: [
-                      SizedBox(height: 10.h),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          children: [
-                            SizedBox(width: 10),
-                            Text(
-                              "Order Address",
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      Addresstext(),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            Addresstext(),
             Padding(
               padding: EdgeInsets.all(10.r),
               child: RectangleContainer(

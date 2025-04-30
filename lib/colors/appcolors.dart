@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class Appcolors {
@@ -7,4 +8,5 @@ class Appcolors {
   static const Color chipfontcolor = Color.fromARGB(211, 88, 88, 86);
   static const Color chipcolor = Color.fromARGB(255, 195, 190, 190);
   static const Color mygreen = Color(0xffB4D97A);
+  static Color? greycolor = Colors.grey[400];
 }

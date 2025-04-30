@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hapticfone/alertsboxs/logout_alertbox.dart';
 import 'package:hapticfone/repository/authenticationrepository.dart';
+import 'package:hapticfone/screens/adderss_section/addadderss_screen.dart';
 import 'package:hapticfone/screens/profile/myprofile.dart';
 
 class ProfileDetailsContainer extends StatelessWidget {
@@ -83,27 +84,30 @@ class ProfileDetailsContainer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[400],
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                width: 358.w,
-                height: 80.h,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 30.w),
-                    Icon(Icons.location_on, size: 35.sp),
-                    SizedBox(width: 20.w),
-                    Text(
-                      "Address Book",
-                      style: TextStyle(
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.bold,
+              InkWell(
+                onTap: () => Get.to(() => AddadderssScreen()),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[400],
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  width: 358.w,
+                  height: 80.h,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(width: 30.w),
+                      Icon(Icons.location_on, size: 35.sp),
+                      SizedBox(width: 20.w),
+                      Text(
+                        "Address Book",
+                        style: TextStyle(
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],

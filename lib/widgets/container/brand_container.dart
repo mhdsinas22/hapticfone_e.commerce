@@ -5,7 +5,7 @@ class BrandContainer extends StatelessWidget {
   final Image brandimage;
   final Color backgroundcolor;
   final BoxDecoration? boxDecoration;
-  BrandContainer({
+  const BrandContainer({
     super.key,
     required this.brandimage,
     this.backgroundcolor = Colors.grey,
@@ -18,7 +18,7 @@ class BrandContainer extends StatelessWidget {
       width: 66.w,
       height: 66.h,
       decoration: BoxDecoration(
-        color: backgroundcolor,
+        color: Colors.grey[400],
         borderRadius: BorderRadius.circular(6),
       ),
       child: Align(

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/instance_manager.dart';
-import 'package:hapticfone/colors/appcolors.dart';
 import 'package:hapticfone/screens/buy/order_status.dart';
 import 'package:hapticfone/widgets/appbar_customized.dart';
+import 'package:hapticfone/widgets/container/bottmnavgitontwobutton.dart';
 import 'package:hapticfone/widgets/container/rectangle_container.dart';
 import 'package:hapticfone/widgets/custom_bottomnavgtionbar_home.dart';
 import 'package:hapticfone/widgets/orderdetails_widgets.dart';
-import 'package:hapticfone/widgets/textbutton_customized.dart';
 import 'package:lottie/lottie.dart';
 
 class OrderDetails extends StatelessWidget {
@@ -17,48 +15,11 @@ class OrderDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Container(
-        color: Colors.grey[300],
-        height: 60.h,
-        width: 200.w,
-        child: Padding(
-          padding: EdgeInsets.all(12.r),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              TextbuttonCustomized(
-                width: 138.w,
-                heigth: 35.h,
-                boxDecoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Appcolors.fontcolourgreen),
-                  color: Colors.white,
-                ),
-                text: "BACK TO HOME",
-                onpressed:
-                    () => Get.offAll(() => CustomBottomnavgtionbarhome()),
-                textStyle: TextStyle(
-                  color: Appcolors.appbuttongreen,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              TextbuttonCustomized(
-                width: 138.w,
-                heigth: 35.h,
-                boxDecoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Appcolors.appbuttongreen,
-                ),
-                text: "ORDER DETAILS",
-                onpressed: () => Get.offAll(() => OrderStatus()),
-                textStyle: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-        ),
+      bottomNavigationBar: BottomnavgtiontwoItens(
+        textbuttontext1: "BACK TO HOME",
+        onpressed1: () => Get.offAll(() => CustomBottomnavgtionbarhome()),
+        textbuttontext2: "ORDER DETAILS",
+        onpressed2: () => Get.offAll(() => OrderStatus()),
       ),
       appBar: Appbarcustomized(title: "Order Details", fontsize: 24.sp),
       body: SingleChildScrollView(
@@ -69,6 +30,7 @@ class OrderDetails extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Lottie.asset(
+                  repeat: false,
                   "asset/animations/googlepaysucess edited.json",
                   width: 300.w,
                 ),

@@ -3,10 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hapticfone/colors/appcolors.dart';
 import 'package:hapticfone/controllers/chipcontrollers.dart';
+import 'package:hapticfone/screens/buy/mobilephone_screen.dart';
+import 'package:hapticfone/screens/buy/smartwatches_scrrem.dart';
 import 'package:hapticfone/screens/sell/sell_home_screen.dart';
 import 'package:hapticfone/widgets/container/brand_container.dart';
 import 'package:hapticfone/widgets/brand_text.dart';
 import 'package:hapticfone/widgets/custom_elveationbutton.dart';
+import 'package:hapticfone/widgets/custombottmnavgbar_forsellside.dart';
 import 'package:hapticfone/widgets/phone_card.dart';
 import 'package:hapticfone/widgets/serach_textfiled.dart';
 
@@ -36,7 +39,7 @@ class Homescreen extends StatelessWidget {
               CustomElveationbutton(
                 text: "Sell",
                 onPressed: () {
-                  Get.off(Sellhomescreen());
+                  Get.off(CustombottmnavgbarForsellside());
                 },
                 backgroundcolor: Colors.grey[400],
                 forgroundcolor: Colors.black,
@@ -63,17 +66,20 @@ class Homescreen extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Container(
-                      width: 129.4.w,
-                      height: 113.55.h,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[400],
-                        borderRadius: BorderRadius.circular(6.r),
-                      ),
-                      child: Image.asset(
-                        "asset/6.png",
-                        width: 97.11.w,
-                        height: 97.11.h,
+                    InkWell(
+                      onTap: () => Get.to(() => MobilephoneScreen()),
+                      child: Container(
+                        width: 129.4.w,
+                        height: 113.55.h,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[400],
+                          borderRadius: BorderRadius.circular(6.r),
+                        ),
+                        child: Image.asset(
+                          "asset/6.png",
+                          width: 97.11.w,
+                          height: 97.11.h,
+                        ),
                       ),
                     ),
                     SizedBox(height: 8.h),
@@ -83,17 +89,20 @@ class Homescreen extends StatelessWidget {
                 SizedBox(width: 10.w),
                 Column(
                   children: [
-                    Container(
-                      width: 132.w,
-                      height: 115.h,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[400],
-                        borderRadius: BorderRadius.circular(6.r),
-                      ),
-                      child: Image.asset(
-                        "asset/5.png",
-                        width: 60.w,
-                        height: 60.h,
+                    InkWell(
+                      onTap: () => Get.to(() => SmartwatchesScrrem()),
+                      child: Container(
+                        width: 132.w,
+                        height: 115.h,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[400],
+                          borderRadius: BorderRadius.circular(6.r),
+                        ),
+                        child: Image.asset(
+                          "asset/5.png",
+                          width: 60.w,
+                          height: 60.h,
+                        ),
                       ),
                     ),
                     SizedBox(height: 8.h),

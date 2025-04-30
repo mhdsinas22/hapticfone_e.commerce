@@ -25,41 +25,43 @@ class Editprofile extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.sp),
         ),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(8.r),
-            child: Row(
-              children: [
-                SizedBox(width: 10.w),
-                Text(
-                  "UPLOAD IMAGE",
-                  style: TextStyle(
-                    fontSize: 16.sp,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(8.r),
+              child: Row(
+                children: [
+                  SizedBox(width: 10.w),
+                  Text(
+                    "UPLOAD IMAGE",
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          EditCircleavatar(),
-          EidtfiledWidgets(),
-          SizedBox(height: 30.h),
-          TextbuttonCustomized(
-            boxDecoration: BoxDecoration(
-              color: Appcolors.appbuttongreen,
-              borderRadius: BorderRadius.circular(10),
+            EditCircleavatar(),
+            EidtfiledWidgets(),
+            SizedBox(height: 30.h),
+            TextbuttonCustomized(
+              boxDecoration: BoxDecoration(
+                color: Appcolors.appbuttongreen,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              text: "Save ",
+              onpressed: () => updateusercontroller.updateuserdeatils(),
+              textStyle: TextStyle(
+                fontSize: 15.sp,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
-            text: "Save ",
-            onpressed: () => updateusercontroller.updateuserdeatils(),
-            textStyle: TextStyle(
-              fontSize: 15.sp,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

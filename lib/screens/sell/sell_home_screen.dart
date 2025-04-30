@@ -14,6 +14,7 @@ class Sellhomescreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(20.h),
           child: Container(color: Colors.black, height: 1.h),
@@ -48,6 +49,7 @@ class Sellhomescreen extends StatelessWidget {
             labeltext: "Search the Phone",
             prefix: Icon(Icons.search),
           ),
+          Image.asset("asset/WhatsApp Image 2025-04-07 at 15.36.44.jpeg"),
         ],
       ),
     );
