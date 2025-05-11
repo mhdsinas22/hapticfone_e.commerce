@@ -7,28 +7,28 @@ import 'package:hapticfone/texts/address_text.dart';
 import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
 import 'package:hapticfone/widgets/container/bottmnavgitontwobutton.dart';
 import 'package:hapticfone/widgets/container/rectangle_container.dart';
-import 'package:hapticfone/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
+import 'package:hapticfone/widgets/custom_bottomnavgitonbar/custombottmnavgbar_forsellside.dart';
 import 'package:hapticfone/widgets/order_status_seroivenumber_date.dart';
 import 'package:hapticfone/widgets/orderproces_widget.dart';
 import 'package:hapticfone/widgets/textbutton_customized.dart';
 
-class OrderStatus extends StatelessWidget {
-  const OrderStatus({super.key});
+class Pickupstatus extends StatelessWidget {
+  const Pickupstatus({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomnavgtiontwoItens(
         textbuttontext1: "BACK TO HOME",
-        textbuttontext2: "Cancel Order",
-        onpressed1: () => Get.offAll(() => CustomBottomnavgtionbarhome()),
+        textbuttontext2: "Cancel Pickup",
+        onpressed1: () => Get.offAll(() => CustombottmnavgbarForsellside()),
         onpressed2:
             () =>
                 LogoutAlertbox(
                   ctxx: context,
                   subtitletext: "",
                   leftsidebuttontext: "No",
-                  rightsidebuttontext: "Cancel Order",
+                  rightsidebuttontext: "Cancel The Pickup",
                   tittle: "Are You Sure",
                 ).logoualoert(),
         textcolor: Colors.red,
@@ -149,7 +149,7 @@ class OrderStatus extends StatelessWidget {
                         child: Row(
                           children: [
                             Text(
-                              "Order Status",
+                              "Pickup Status",
                               style: TextStyle(
                                 fontSize: 20.sp,
                                 fontWeight: FontWeight.w700,
@@ -168,14 +168,14 @@ class OrderStatus extends StatelessWidget {
                         ),
                       ),
                       OrderprocesWidget(
-                        ordercomments: "Order Confirmed",
+                        ordercomments: "Pickup Confirmed",
                         lineheight: 60.h,
                         dateandday: "",
                         time: "",
                         circleavatarbackgroundcolor: Appcolors.appgrey,
                       ),
                       OrderprocesWidget(
-                        ordercomments: "Order Started",
+                        ordercomments: "Pickup Started",
                         lineheight: 60.h,
                         dateandday: "",
                         time: "",
@@ -183,7 +183,7 @@ class OrderStatus extends StatelessWidget {
                       ),
                       OrderprocesWidget(
                         isneedline: false,
-                        ordercomments: "Order Completed",
+                        ordercomments: "Pickup Completed",
                         lineheight: 60.h,
                         dateandday: "",
                         time: "",

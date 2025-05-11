@@ -5,11 +5,10 @@ import 'package:hapticfone/colors/appcolors.dart';
 import 'package:hapticfone/controllers/chipcontrollers.dart';
 import 'package:hapticfone/screens/buy/mobilephone_screen.dart';
 import 'package:hapticfone/screens/buy/smartwatches_scrrem.dart';
-import 'package:hapticfone/screens/sell/sell_home_screen.dart';
 import 'package:hapticfone/widgets/container/brand_container.dart';
-import 'package:hapticfone/widgets/brand_text.dart';
+import 'package:hapticfone/widgets/texts/brand_text.dart';
 import 'package:hapticfone/widgets/custom_elveationbutton.dart';
-import 'package:hapticfone/widgets/custombottmnavgbar_forsellside.dart';
+import 'package:hapticfone/widgets/custom_bottomnavgitonbar/custombottmnavgbar_forsellside.dart';
 import 'package:hapticfone/widgets/phone_card.dart';
 import 'package:hapticfone/widgets/serach_textfiled.dart';
 
@@ -177,6 +176,7 @@ class Homescreen extends StatelessWidget {
                 ],
               ),
             ),
+
             PhoneCard(),
           ],
         ),

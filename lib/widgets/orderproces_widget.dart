@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hapticfone/colors/appcolors.dart';
-import 'package:hapticfone/texts/address_text.dart';
 
 class OrderprocesWidget extends StatelessWidget {
   const OrderprocesWidget({

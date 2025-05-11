@@ -13,7 +13,7 @@ import 'package:hapticfone/screens/animatons_screen.dart';
 import 'package:hapticfone/screens/email_screen.dart';
 import 'package:hapticfone/screens/loginscrren.dart';
 import 'package:hapticfone/screens/signupscreen.dart';
-import 'package:hapticfone/widgets/custom_bottomnavgtionbar_home.dart';
+import 'package:hapticfone/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
 
 class Authenticationrepository extends GetxController {
   static Authenticationrepository get instance => Get.find();

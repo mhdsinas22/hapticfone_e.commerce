@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hapticfone/widgets/appbar_customized.dart';
+import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
 
 class MobilephoneScreen extends StatelessWidget {
   const MobilephoneScreen({super.key});

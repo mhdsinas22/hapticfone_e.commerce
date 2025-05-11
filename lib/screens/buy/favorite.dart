@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hapticfone/widgets/appbar_customized.dart';
+import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
 import 'package:hapticfone/widgets/phone_card.dart';
 
 class Favorite extends StatelessWidget {

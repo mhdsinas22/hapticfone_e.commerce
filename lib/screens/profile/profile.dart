@@ -7,8 +7,8 @@ import 'package:hapticfone/effects/shimmer_effect.dart';
 import 'package:hapticfone/widgets/profile_details_container.dart';
 
 class Profile extends StatelessWidget {
-  const Profile({super.key});
-
+  const Profile({super.key, this.sellprofile = false});
+  final bool sellprofile;
   @override
   Widget build(BuildContext context) {
     final controlleruser = Get.put(Usercontroller());
@@ -50,7 +50,9 @@ class Profile extends StatelessWidget {
                 ),
               ],
             ),
-            ProfileDetailsContainer(),
+            sellprofile == false
+                ? ProfileDetailsContainer()
+                : ProfileDetailsContainer(sellprofilescrren: true),
           ],
         ),
       ),

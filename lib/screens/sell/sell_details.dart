@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hapticfone/screens/buy/order_status.dart';
 import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
 import 'package:hapticfone/widgets/container/bottmnavgitontwobutton.dart';
 import 'package:hapticfone/widgets/container/rectangle_container.dart';
-import 'package:hapticfone/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
+import 'package:hapticfone/widgets/custom_bottomnavgitonbar/custombottmnavgbar_forsellside.dart';
 import 'package:hapticfone/widgets/orderdetails_widgets.dart';
 import 'package:lottie/lottie.dart';
 
-class OrderDetails extends StatelessWidget {
-  const OrderDetails({super.key});
+class SellDetails extends StatelessWidget {
+  const SellDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomnavgtiontwoItens(
         textbuttontext1: "BACK TO HOME",
-        onpressed1: () => Get.offAll(() => CustomBottomnavgtionbarhome()),
-        textbuttontext2: "ORDER DETAILS",
-        onpressed2: () => Get.offAll(() => OrderStatus()),
+        onpressed1: () => Get.offAll(() => CustombottmnavgbarForsellside()),
+        textbuttontext2: "Pickup DETAILS",
+        onpressed2: () {},
       ),
       appBar: Appbarcustomized(title: "Order Details", fontsize: 24.sp),
       body: SingleChildScrollView(
@@ -41,7 +40,7 @@ class OrderDetails extends StatelessWidget {
               style: TextStyle(fontSize: 34.sp, fontWeight: FontWeight.bold),
             ),
             Text(
-              "Your Order has been confirmed",
+              "Your Pick Up has been confirmed",
               style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w700),
             ),
             SizedBox(height: 20.h),
@@ -59,7 +58,7 @@ class OrderDetails extends StatelessWidget {
                     child: Row(
                       children: [
                         Text(
-                          "Order Details",
+                          "Pick Up Details",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 22.sp,

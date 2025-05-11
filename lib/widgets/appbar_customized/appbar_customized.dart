@@ -6,18 +6,22 @@ class Appbarcustomized extends StatelessWidget implements PreferredSizeWidget {
   final bool centertile;
   final double fontsize;
   final FontWeight fontweight;
+  final bool prefresizeneed;
+  final Color backgorundcolr;
   const Appbarcustomized({
     super.key,
     required this.title,
     this.centertile = true,
     this.fontsize = 32,
     this.fontweight = FontWeight.bold,
+    this.prefresizeneed = true,
+    this.backgorundcolr = Colors.white,
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: backgorundcolr,
       centerTitle: centertile,
       title: Text(
         title,
@@ -27,10 +31,13 @@ class Appbarcustomized extends StatelessWidget implements PreferredSizeWidget {
           fontWeight: fontweight,
         ),
       ),
-      bottom: PreferredSize(
-        preferredSize: Size.fromHeight(10.h),
-        child: Container(color: Colors.black, height: 1.w),
-      ),
+      bottom:
+          prefresizeneed == true
+              ? PreferredSize(
+                preferredSize: Size.fromHeight(10.h),
+                child: Container(color: Colors.black, height: 1.w),
+              )
+              : PreferredSize(preferredSize: preferredSize, child: Container()),
     );
   }
 

@@ -6,7 +6,7 @@ import 'package:hapticfone/controllers/radiowidgetcontroller.dart';
 import 'package:hapticfone/screens/buy/order_details.dart';
 import 'package:hapticfone/texts/address_text.dart';
 import 'package:hapticfone/texts/phonedetils_text.dart';
-import 'package:hapticfone/widgets/appbar_customized.dart';
+import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
 import 'package:hapticfone/widgets/cashtotal_continer.dart';
 import 'package:hapticfone/widgets/container/rectangle_container.dart';
 import 'package:hapticfone/widgets/redio_widget.dart';

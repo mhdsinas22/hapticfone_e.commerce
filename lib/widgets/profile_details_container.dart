@@ -4,11 +4,13 @@ import 'package:get/get.dart';
 import 'package:hapticfone/alertsboxs/logout_alertbox.dart';
 import 'package:hapticfone/repository/authenticationrepository.dart';
 import 'package:hapticfone/screens/adderss_section/addadderss_screen.dart';
+import 'package:hapticfone/screens/buy/order.dart';
 import 'package:hapticfone/screens/profile/myprofile.dart';
+import 'package:hapticfone/screens/sell/pickupscreen.dart';
 
 class ProfileDetailsContainer extends StatelessWidget {
-  const ProfileDetailsContainer({super.key});
-
+  const ProfileDetailsContainer({super.key, this.sellprofilescrren = false});
+  final bool sellprofilescrren;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,33 +21,67 @@ class ProfileDetailsContainer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey[400],
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                width: 358.w,
-                height: 80.h,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(width: 30.w),
-                    Image.asset(
-                      "asset/box (2).png",
-                      width: 34.w,
-                      color: Colors.black,
-                    ),
-                    SizedBox(width: 20.w),
-                    Text(
-                      "My orders",
-                      style: TextStyle(
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.bold,
+              sellprofilescrren == false
+                  ? InkWell(
+                    onTap: () => Get.to(() => Order()),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey[400],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      width: 358.w,
+                      height: 80.h,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(width: 30.w),
+                          Image.asset(
+                            "asset/box (2).png",
+                            width: 34.w,
+                            color: Colors.black,
+                          ),
+                          SizedBox(width: 20.w),
+                          Text(
+                            "My orders",
+                            style: TextStyle(
+                              fontSize: 24.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
-                ),
-              ),
+                  )
+                  : InkWell(
+                    onTap: () => Get.to(() => PickupScreen()),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey[400],
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      width: 358.w,
+                      height: 80.h,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          SizedBox(width: 30.w),
+                          Image.asset(
+                            "asset/delivery-location.png",
+                            width: 34.w,
+                            color: Colors.black,
+                          ),
+                          SizedBox(width: 20.w),
+                          Text(
+                            "My PickUp",
+                            style: TextStyle(
+                              fontSize: 24.sp,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
             ],
           ),
           SizedBox(height: 15.h),

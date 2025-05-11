@@ -2,7 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PhoneSpecifications extends StatelessWidget {
-  const PhoneSpecifications({super.key});
+  const PhoneSpecifications({
+    super.key,
+    required this.phonebrand,
+    required this.phonecolor,
+    required this.phoneram,
+    required this.phonestock,
+    required this.phonestorage,
+  });
+  final String phoneram;
+  final String phonestorage;
+  final String phonebrand;
+  final String phonecolor;
+  final String phonestock;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +46,7 @@ class PhoneSpecifications extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: "6GB",
+                    text: phoneram,
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -62,7 +74,7 @@ class PhoneSpecifications extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: "256GB",
+                    text: phonestorage,
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
@@ -90,7 +102,7 @@ class PhoneSpecifications extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: "Apple",
+                    text: phonebrand,
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
@@ -118,7 +130,7 @@ class PhoneSpecifications extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: "Siera Blue",
+                    text: phonecolor,
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
@@ -146,11 +158,11 @@ class PhoneSpecifications extends StatelessWidget {
                     ),
                   ),
                   TextSpan(
-                    text: "2 units only left",
+                    text: phonestock,
                     style: TextStyle(
                       fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
-                      color: Colors.red,
+                      color: phonestock.length <= 1 ? Colors.red : Colors.black,
                     ),
                   ),
                 ],

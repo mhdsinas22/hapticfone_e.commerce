@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
-import 'package:hapticfone/widgets/custom_bottomnavgtionbar_home.dart';
+import 'package:hapticfone/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
 import 'package:lottie/lottie.dart';
 
 class AnimatonsScreen extends StatelessWidget {

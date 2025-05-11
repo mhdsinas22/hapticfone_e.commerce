@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hapticfone/colors/appcolors.dart';
 import 'package:hapticfone/screens/adderss_section/addresstextformfiled.dart';
-import 'package:hapticfone/widgets/appbar_customized.dart';
+import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
 import 'package:hapticfone/widgets/textbutton_customized.dart';
 
 class AddadderssFormscreen extends StatelessWidget {

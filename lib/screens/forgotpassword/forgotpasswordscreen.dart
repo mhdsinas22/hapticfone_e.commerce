@@ -6,7 +6,7 @@ import 'package:get/utils.dart';
 import 'package:hapticfone/colors/appcolors.dart';
 import 'package:hapticfone/screens/forgotpassword/forgotpassword_contriller.dart';
 import 'package:hapticfone/utils/validators/validator.dart';
-import 'package:hapticfone/widgets/boldtext.dart';
+import 'package:hapticfone/widgets/texts/boldtext.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   final String? email;

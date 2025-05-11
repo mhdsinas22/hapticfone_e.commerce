@@ -4,7 +4,7 @@ import 'package:get/instance_manager.dart';
 import 'package:get/route_manager.dart';
 import 'package:hapticfone/colors/appcolors.dart';
 import 'package:hapticfone/screens/buy/checkout/checkout.dart';
-import 'package:hapticfone/widgets/appbar_customized.dart';
+import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
 import 'package:hapticfone/widgets/cart_widgtes.dart';
 
 class Cart extends StatelessWidget {

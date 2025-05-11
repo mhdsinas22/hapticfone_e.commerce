@@ -6,7 +6,7 @@ import 'package:hapticfone/colors/appcolors.dart';
 import 'package:hapticfone/controllers/usercontroller.dart';
 
 import 'package:hapticfone/utils/validators/validator.dart';
-import 'package:hapticfone/widgets/boldtext.dart';
+import 'package:hapticfone/widgets/texts/boldtext.dart';
 
 class UserReauthenticationScreen extends StatelessWidget {
   const UserReauthenticationScreen({super.key});

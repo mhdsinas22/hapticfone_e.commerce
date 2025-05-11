@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:hapticfone/colors/appcolors.dart';
-import 'package:hapticfone/widgets/custom_bottomnavgtionbar_home.dart';
+import 'package:hapticfone/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
 import 'package:hapticfone/widgets/custom_elveationbutton.dart';
 import 'package:hapticfone/widgets/serach_textfiled.dart';
 
@@ -50,6 +50,20 @@ class Sellhomescreen extends StatelessWidget {
             prefix: Icon(Icons.search),
           ),
           Image.asset("asset/WhatsApp Image 2025-04-07 at 15.36.44.jpeg"),
+          Expanded(
+            child: Column(
+              children: [
+                Text(
+                  "Got an old Phone? Want Ready Cash Today",
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 30.sp,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

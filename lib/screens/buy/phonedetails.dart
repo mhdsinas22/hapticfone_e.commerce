@@ -9,12 +9,28 @@ import 'package:hapticfone/widgets/container/image_container.dart';
 import 'package:hapticfone/widgets/phone_specifications.dart';
 
 class Phonedetails extends StatelessWidget {
+  final List<dynamic> images;
   final String phonetile;
   final String phoneimage;
+  final String phoneram;
+  final String phonestorage;
+  final String phonebrand;
+  final String phonecolor;
+  final int phonestock;
+  final String phonecondtion;
+  final double phoneprice;
   const Phonedetails({
     super.key,
     required this.phonetile,
     required this.phoneimage,
+    required this.phonebrand,
+    required this.phonecolor,
+    required this.phoneram,
+    required this.phonestock,
+    required this.phonestorage,
+    required this.phonecondtion,
+    required this.phoneprice,
+    required this.images,
   });
 
   @override
@@ -41,7 +57,7 @@ class Phonedetails extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "₹44999",
+                "₹${phoneprice.toInt()}",
                 style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold),
               ),
               SizedBox(width: 100.w),
@@ -125,6 +141,7 @@ class Phonedetails extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
+        backgroundColor: Colors.white,
         title: Text(phonetile),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(12.sp),
@@ -149,14 +166,14 @@ class Phonedetails extends StatelessWidget {
               color: const Color.fromARGB(255, 216, 246, 180),
               height: 339.h,
 
-              child: CarsoualSilderr(phoneimage: phoneimage),
+              child: CarsoualSilderr(images: images),
             ),
             SizedBox(height: 10),
             Obx(
               () => Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  for (int i = 0; i < 3; i++)
+                  for (int i = 0; i < images.length; i++)
                     TCircularContainer(
                       margin: EdgeInsets.all(4),
                       padding: 1,
@@ -175,12 +192,13 @@ class Phonedetails extends StatelessWidget {
               () => Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  for (int i = 0; i < 3; i++)
+                  for (int i = 0; i < images.length; i++)
                     Image_container(
                       boxDecoration: BoxDecoration(
                         border: Border.all(
                           width: 1,
                           color:
+                              // ignore: unrelated_type_equality_checks
                               controller.carsoulcircularcontainerindex == i
                                   ? Appcolors.appbuttongreen
                                   : Colors.black,
@@ -189,20 +207,20 @@ class Phonedetails extends StatelessWidget {
                         borderRadius: BorderRadius.circular(6),
                       ),
                       backgroundcolor: Colors.white,
-                      brandimage: Image.asset(phoneimage),
+                      brandimage: Image.network(images[i]),
                     ),
                 ],
               ),
             ),
             Text(
-              "Apple iPhone 13 pro -Pre Owned Phone",
+              "$phonetile - $phonecondtion",
               style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
             ),
             Row(
               children: [
                 SizedBox(width: 65.w),
                 Text(
-                  "₹44999",
+                  "₹${phoneprice.toInt()}",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 32.sp,
@@ -210,7 +228,13 @@ class Phonedetails extends StatelessWidget {
                 ),
               ],
             ),
-            PhoneSpecifications(),
+            PhoneSpecifications(
+              phonebrand: phonebrand,
+              phonecolor: phonecolor,
+              phoneram: phoneram,
+              phonestock: phonestock.toString(),
+              phonestorage: phonestorage,
+            ),
           ],
         ),
       ),

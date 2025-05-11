@@ -8,7 +8,7 @@ import 'package:hapticfone/colors/appcolors.dart';
 import 'package:hapticfone/controllers/verifyemailaddress.dart';
 import 'package:hapticfone/images/images.dart';
 import 'package:hapticfone/screens/loginscrren.dart';
-import 'package:hapticfone/widgets/boldtext.dart';
+import 'package:hapticfone/widgets/texts/boldtext.dart';
 
 class EmailScreen extends StatelessWidget {
   final String? email;

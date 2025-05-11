@@ -9,7 +9,7 @@ import 'package:hapticfone/controllers/verifyemailaddress.dart';
 import 'package:hapticfone/images/images.dart';
 import 'package:hapticfone/screens/forgotpassword/forgotpassword_contriller.dart';
 import 'package:hapticfone/screens/loginscrren.dart';
-import 'package:hapticfone/widgets/boldtext.dart';
+import 'package:hapticfone/widgets/texts/boldtext.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
   final String? email;

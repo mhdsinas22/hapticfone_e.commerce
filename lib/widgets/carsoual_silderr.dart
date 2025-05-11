@@ -4,21 +4,21 @@ import 'package:get/get.dart';
 import 'package:hapticfone/controllers/carsoulcircularcontainercontroller.dart';
 
 class CarsoualSilderr extends StatelessWidget {
-  final String phoneimage;
-  const CarsoualSilderr({super.key, required this.phoneimage});
+  final List<dynamic> images;
+  const CarsoualSilderr({super.key, required this.images});
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(Carsoulcircularcontainercontroller());
-    return CarouselSlider(
+    return CarouselSlider.builder(
       options: CarouselOptions(
         onPageChanged:
             (index, reason) => controller.updatepageindicatoer(index),
       ),
-      items: [
-        Image.asset(phoneimage, width: 400, height: 400),
-        Image.asset("asset/20.png"),
-      ],
+      itemCount: images.length,
+      itemBuilder: (context, index, realIndex) {
+        return Image.network(images[index], width: 400, height: 400);
+      },
     );
   }
 }
