@@ -189,27 +189,30 @@ class Phonedetails extends StatelessWidget {
               ),
             ),
             Obx(
-              () => Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  for (int i = 0; i < images.length; i++)
-                    Image_container(
-                      boxDecoration: BoxDecoration(
-                        border: Border.all(
-                          width: 1,
-                          color:
-                              // ignore: unrelated_type_equality_checks
-                              controller.carsoulcircularcontainerindex == i
-                                  ? Appcolors.appbuttongreen
-                                  : Colors.black,
+              () => SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    for (int i = 0; i < images.length; i++)
+                      Image_container(
+                        boxDecoration: BoxDecoration(
+                          border: Border.all(
+                            width: 1,
+                            color:
+                                // ignore: unrelated_type_equality_checks
+                                controller.carsoulcircularcontainerindex == i
+                                    ? Appcolors.appbuttongreen
+                                    : Colors.black,
+                          ),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(6),
                         ),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(6),
+                        backgroundcolor: Colors.white,
+                        brandimage: Image.network(images[i]),
                       ),
-                      backgroundcolor: Colors.white,
-                      brandimage: Image.network(images[i]),
-                    ),
-                ],
+                  ],
+                ),
               ),
             ),
             Text(

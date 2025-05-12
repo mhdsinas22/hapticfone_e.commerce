@@ -34,8 +34,8 @@ class BottomnavgtiontwoItens extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             TextbuttonCustomized(
-              width: 138.w,
-              heigth: 35.h,
+              width: 138,
+              heigth: 35,
               boxDecoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(color: Appcolors.fontcolourgreen),
@@ -49,8 +49,8 @@ class BottomnavgtiontwoItens extends StatelessWidget {
               ),
             ),
             TextbuttonCustomized(
-              width: 138.w,
-              heigth: 35.h,
+              width: 138,
+              heigth: 55,
               boxDecoration: BoxDecoration(
                 border: Border.all(color: bordercolr),
                 borderRadius: BorderRadius.circular(10),

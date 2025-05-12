@@ -23,6 +23,7 @@ class OrderDetails extends StatelessWidget {
       ),
       appBar: Appbarcustomized(title: "Order Details", fontsize: 24.sp),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -50,8 +51,8 @@ class OrderDetails extends StatelessWidget {
                 color: Colors.grey[400],
                 border: Border.all(color: Colors.black),
               ),
-              width: 290.w,
-              heigth: 290.h,
+              width: 290,
+              heigth: 350,
               child: Column(
                 children: [
                   Padding(

@@ -20,6 +20,19 @@ class Checkout extends StatelessWidget {
     final rediocontroller = Get.put(Radiowidgetcontroller());
     int selectedvalue = 1;
     return Scaffold(
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.all(10.r),
+        child: TextbuttonCustomized(
+          heigth: 52,
+          width: 200,
+          text: "Place Order",
+          onpressed: () {
+            Get.offAll(OrderDetails());
+          },
+          textStyle: TextStyle(fontSize: 20.sp, color: Colors.white),
+          boxDecoration: BoxDecoration(color: Appcolors.appbuttongreen),
+        ),
+      ),
       appBar: Appbarcustomized(
         title: "Checkout",
         centertile: false,
@@ -107,19 +120,6 @@ class Checkout extends StatelessWidget {
             ),
             CashtotalContainer(),
             SizedBox(height: 10.h),
-            Padding(
-              padding: EdgeInsets.all(10.r),
-              child: TextbuttonCustomized(
-                heigth: 52.h,
-                width: 300.w,
-                text: "Place Order",
-                onpressed: () {
-                  Get.offAll(OrderDetails());
-                },
-                textStyle: TextStyle(fontSize: 20.sp, color: Colors.white),
-                boxDecoration: BoxDecoration(color: Appcolors.appbuttongreen),
-              ),
-            ),
           ],
         ),
       ),

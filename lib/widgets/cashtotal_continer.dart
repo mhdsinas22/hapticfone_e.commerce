@@ -11,8 +11,8 @@ class CashtotalContainer extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(10.r),
       child: RectangleContainer(
-        width: 371.w,
-        heigth: 145.h,
+        width: 371,
+        heigth: 145,
         boxDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.r),
           border: Border.all(color: Appcolors.mygreen),

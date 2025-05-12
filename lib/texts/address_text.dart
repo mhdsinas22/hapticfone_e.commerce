@@ -11,7 +11,7 @@ class Addresstext extends StatelessWidget {
       elevation: 5,
       child: Container(
         width: width.w,
-        height: 180.h,
+        height: 200.h,
         color: Colors.white,
         child: Column(
           children: [
@@ -20,7 +20,7 @@ class Addresstext extends StatelessWidget {
               child: Row(children: [Text("Order Address")]),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.r),
               child: Column(
                 children: [
                   Row(

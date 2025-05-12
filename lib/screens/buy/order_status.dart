@@ -67,8 +67,8 @@ class OrderStatus extends StatelessWidget {
                   children: [
                     TextbuttonCustomized(
                       textStyle: TextStyle(color: Appcolors.fontcolourgreen),
-                      width: 130.w,
-                      heigth: 30.h,
+                      width: 130,
+                      heigth: 30,
                       boxDecoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: const Color.fromARGB(255, 212, 231, 181),
@@ -140,8 +140,8 @@ class OrderStatus extends StatelessWidget {
                 elevation: 15,
                 child: RectangleContainer(
                   boxDecoration: BoxDecoration(color: Colors.white),
-                  width: 266.w,
-                  heigth: 630.h,
+                  width: 266,
+                  heigth: 700,
                   child: Column(
                     children: [
                       Padding(
