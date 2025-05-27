@@ -1,18 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hapticfone/colors/appcolors.dart';
+import 'package:get/get.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/appbar_customized/appbar_customized.dart';
+import 'package:hapticfone/common/widgets/textbutton_customized.dart';
+import 'package:hapticfone/controllers/radiocontroller.dart';
+import 'package:hapticfone/screens/adderss_section/address_controller.dart';
 import 'package:hapticfone/screens/adderss_section/addresstextformfiled.dart';
-import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
-import 'package:hapticfone/widgets/textbutton_customized.dart';
 
 class AddadderssFormscreen extends StatelessWidget {
-  const AddadderssFormscreen({super.key});
+  const AddadderssFormscreen({
+    super.key,
+    this.iseditscreen = false,
+    this.id = "",
+    this.fullname = "",
+    this.pincode = "",
+    this.phonenumber = "",
+    this.address = "",
+    this.city = "",
+    this.landmarl = "",
+    this.saveas = "",
+    this.state = "",
+  });
+  final bool iseditscreen;
+  final String fullname;
+  final String pincode;
+  final String phonenumber;
+  final String address;
+  final String city;
+  final String state;
+  final String landmarl;
+  final String saveas;
+  final String id;
 
   @override
   Widget build(BuildContext context) {
+    final addressconroller = Get.put(Addresscontroller());
+    final radiocontroller = Get.put(Radiocontroller());
     return Scaffold(
       appBar: Appbarcustomized(
-        title: "Add New Address",
+        title: iseditscreen ? "Edit the Address" : "Add New Address",
         centertile: false,
         fontsize: 20.sp,
       ),
@@ -46,8 +73,17 @@ class AddadderssFormscreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Divider(height: 1.h, color: Colors.black, thickness: 1),
-              Addresstextformfiled(),
+              Divider(height: 1.h, color: Appcolors.black, thickness: 1),
+              Addresstextformfiled(
+                fullname: fullname,
+                pincode: pincode,
+                address: address,
+                city: city,
+                landmarl: landmarl,
+                phonenumber: phonenumber,
+                saveas: saveas,
+                state: state,
+              ),
               Padding(
                 padding: EdgeInsets.all(12.r),
                 child: Row(
@@ -68,12 +104,16 @@ class AddadderssFormscreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Radio(
-                        value: 1,
-                        groupValue: 1,
-                        onChanged: (value) {},
-                        activeColor: Appcolors.mygreen,
-                        hoverColor: Appcolors.mygreen,
+                      Obx(
+                        () => Radio<String>(
+                          value: "Home",
+                          groupValue: radiocontroller.selectedvalue.value,
+                          onChanged: (value) {
+                            radiocontroller.setvalue(value!);
+                          },
+                          activeColor: Appcolors.mygreen,
+                          hoverColor: Appcolors.mygreen,
+                        ),
                       ),
                       Text(
                         "Home",
@@ -87,12 +127,16 @@ class AddadderssFormscreen extends StatelessWidget {
 
                   Row(
                     children: [
-                      Radio(
-                        value: 2,
-                        groupValue: 1,
-                        onChanged: (value) {},
-                        activeColor: Appcolors.mygreen,
-                        hoverColor: Appcolors.mygreen,
+                      Obx(
+                        () => Radio<String>(
+                          value: "Office",
+                          groupValue: radiocontroller.selectedvalue.value,
+                          onChanged: (value) {
+                            radiocontroller.setvalue(value!);
+                          },
+                          activeColor: Appcolors.mygreen,
+                          hoverColor: Appcolors.mygreen,
+                        ),
                       ),
                       Text(
                         "Office",
@@ -106,12 +150,16 @@ class AddadderssFormscreen extends StatelessWidget {
 
                   Row(
                     children: [
-                      Radio(
-                        value: 3,
-                        groupValue: 1,
-                        onChanged: (value) {},
-                        activeColor: Appcolors.mygreen,
-                        hoverColor: Appcolors.mygreen,
+                      Obx(
+                        () => Radio<String>(
+                          value: "Other",
+                          groupValue: radiocontroller.selectedvalue.value,
+                          onChanged: (value) {
+                            radiocontroller.setvalue(value!);
+                          },
+                          activeColor: Appcolors.mygreen,
+                          hoverColor: Appcolors.mygreen,
+                        ),
                       ),
                       Text(
                         "Other",
@@ -129,8 +177,12 @@ class AddadderssFormscreen extends StatelessWidget {
                 boxDecoration: BoxDecoration(color: Appcolors.mygreen),
                 width: 300.w,
                 heigth: 54.h,
-                text: "Add Address",
-                onpressed: () {},
+                text: iseditscreen ? "Edit Address" : "Add Address",
+                onpressed:
+                    () =>
+                        iseditscreen
+                            ? addressconroller.edittheaddress(id)
+                            : addressconroller.addaddresstofirebase(),
                 textStyle: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,

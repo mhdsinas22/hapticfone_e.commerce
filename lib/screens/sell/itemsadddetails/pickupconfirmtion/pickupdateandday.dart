@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hapticfone/colors/appcolors.dart';
-import 'package:hapticfone/widgets/container/rectangle_container.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/container/rectangle_container.dart';
 
 class Pickupdateandday extends StatelessWidget {
   const Pickupdateandday({super.key});

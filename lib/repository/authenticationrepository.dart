@@ -7,13 +7,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:hapticfone/common/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
 import 'package:hapticfone/images/images.dart';
 import 'package:hapticfone/repository/user/user_repository.dart';
 import 'package:hapticfone/screens/animatons_screen.dart';
 import 'package:hapticfone/screens/email_screen.dart';
 import 'package:hapticfone/screens/loginscrren.dart';
 import 'package:hapticfone/screens/signupscreen.dart';
-import 'package:hapticfone/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
+import 'package:hapticfone/utils/validators/localstroage.dart';
 
 class Authenticationrepository extends GetxController {
   static Authenticationrepository get instance => Get.find();
@@ -28,11 +29,12 @@ class Authenticationrepository extends GetxController {
     // loginscrrendirect();
   }
 
-  screenredirect() {
+  screenredirect() async {
     User? user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       if (user.emailVerified) {
-        Get.offAll(() => CustomBottomnavgtionbarhome());
+        await Localstroage.initUserId(user.uid);
+        await Get.offAll(() => CustomBottomnavgtionbarhome());
       } else {
         Get.offAll(() => EmailScreen(email: auth.currentUser?.email));
       }
@@ -266,14 +268,14 @@ class Authenticationrepository extends GetxController {
 
       // Re-authenticate
       await auth.currentUser!.reauthenticateWithCredential(credential);
-    } on FirebaseAuthException catch (e) {
-      throw e; // Throw actual error for handling
-    } on FirebaseException catch (e) {
-      throw e;
-    } on FormatException catch (e) {
-      throw e;
-    } on PlatformException catch (e) {
-      throw e;
+    } on FirebaseAuthException {
+      rethrow; // Throw actual error for handling
+    } on FirebaseException {
+      rethrow;
+    } on FormatException {
+      rethrow;
+    } on PlatformException {
+      rethrow;
     } catch (e) {
       throw "Something went wrong. Please try again.";
     }

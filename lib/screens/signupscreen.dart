@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hapticfone/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
 import 'package:hapticfone/screens/loginscrren.dart';
 import 'package:hapticfone/signup/signupform.dart';
 
@@ -28,7 +28,7 @@ class Signupscreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(20.r),
+              padding: EdgeInsets.all(12.r),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,

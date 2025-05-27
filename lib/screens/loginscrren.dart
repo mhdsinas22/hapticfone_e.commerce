@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:hapticfone/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
 import 'package:hapticfone/screens/login/login_form.dart';
 import 'package:hapticfone/screens/login/logincontroller.dart';
 import 'package:hapticfone/screens/signupscreen.dart';
@@ -35,8 +33,7 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(20.r),
-
+              padding: EdgeInsets.all(12.r),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,

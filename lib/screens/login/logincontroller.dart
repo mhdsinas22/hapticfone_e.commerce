@@ -3,10 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:hapticfone/common/widgets/TFullScreenLoader.dart';
 import 'package:hapticfone/controllers/usercontroller.dart';
 import 'package:hapticfone/networks/networks_manger.dart';
 import 'package:hapticfone/repository/authenticationrepository.dart';
-import 'package:hapticfone/widgets/TFullScreenLoader.dart';
 
 class Logincontroller extends GetxController {
   static Logincontroller get instance => Get.find();
@@ -55,7 +55,7 @@ class Logincontroller extends GetxController {
         password.text.trim(),
       );
       // Remove Loader
-      Tfullscreenloader.stoploading();
+      // Tfullscreenloader.stoploading();
       // Redirect
       Authenticationrepository.instance.loginscrrendirect();
     } catch (e) {

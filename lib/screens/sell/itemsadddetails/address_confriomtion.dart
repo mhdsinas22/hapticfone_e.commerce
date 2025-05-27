@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:hapticfone/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/appbar_customized/appbar_customized.dart';
+import 'package:hapticfone/common/widgets/container/rectangle_container.dart';
+import 'package:hapticfone/common/widgets/pickupconfirmation_headside.dart';
+import 'package:hapticfone/common/widgets/savedlocation_widget.dart';
+import 'package:hapticfone/common/widgets/textbutton_customized.dart';
 import 'package:hapticfone/screens/sell/itemsadddetails/pickupconfirmtion/pickupslot.dart';
-import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
-import 'package:hapticfone/widgets/container/rectangle_container.dart';
-import 'package:hapticfone/widgets/pickupconfirmation_headside.dart';
-import 'package:hapticfone/widgets/savedlocation_widget.dart';
-import 'package:hapticfone/widgets/textbutton_customized.dart';
 
 class Addressconfirmation extends StatelessWidget {
   const Addressconfirmation({super.key});

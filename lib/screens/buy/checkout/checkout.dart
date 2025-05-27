@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hapticfone/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/appbar_customized/appbar_customized.dart';
+import 'package:hapticfone/common/widgets/cashtotal_continer.dart';
+import 'package:hapticfone/common/widgets/container/rectangle_container.dart';
+import 'package:hapticfone/common/widgets/redio_widget.dart';
+import 'package:hapticfone/common/widgets/textbutton_customized.dart';
 import 'package:hapticfone/controllers/radiowidgetcontroller.dart';
 import 'package:hapticfone/screens/buy/order_details.dart';
 import 'package:hapticfone/texts/address_text.dart';
 import 'package:hapticfone/texts/phonedetils_text.dart';
-import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
-import 'package:hapticfone/widgets/cashtotal_continer.dart';
-import 'package:hapticfone/widgets/container/rectangle_container.dart';
-import 'package:hapticfone/widgets/redio_widget.dart';
-import 'package:hapticfone/widgets/textbutton_customized.dart';
 
 class Checkout extends StatelessWidget {
   const Checkout({super.key});

@@ -2,13 +2,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:hapticfone/common/widgets/TFullScreenLoader.dart';
 import 'package:hapticfone/models/usermodels.dart';
 import 'package:hapticfone/networks/networks_manger.dart';
 import 'package:hapticfone/repository/authenticationrepository.dart';
 import 'package:hapticfone/repository/user/user_repository.dart';
 import 'package:hapticfone/screens/loginscrren.dart';
 import 'package:hapticfone/screens/user_reauthentication_screen.dart';
-import 'package:hapticfone/widgets/TFullScreenLoader.dart';
 import 'package:image_picker/image_picker.dart';
 
 class Usercontroller extends GetxController {

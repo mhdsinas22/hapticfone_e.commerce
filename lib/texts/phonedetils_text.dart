@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:hapticfone/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
 
 class PhonedetilsText extends StatelessWidget {
   const PhonedetilsText({super.key});

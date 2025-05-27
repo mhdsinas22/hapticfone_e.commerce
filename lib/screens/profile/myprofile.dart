@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hapticfone/alertsboxs/logout_alertbox.dart';
-import 'package:hapticfone/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/container/profile_name_etc_container.dart';
+import 'package:hapticfone/common/widgets/myprofilewidgtes.dart';
+import 'package:hapticfone/common/widgets/textbutton_customized.dart';
 import 'package:hapticfone/controllers/usercontroller.dart';
 import 'package:hapticfone/screens/profile/editprofile.dart';
-import 'package:hapticfone/widgets/container/profile_name_etc_container.dart';
-import 'package:hapticfone/widgets/myprofilewidgtes.dart';
-import 'package:hapticfone/widgets/textbutton_customized.dart';
 
 class Myprofile extends StatelessWidget {
   const Myprofile({super.key});

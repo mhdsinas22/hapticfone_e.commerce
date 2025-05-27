@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hapticfone/common/widgets/TFullScreenLoader.dart';
 import 'package:hapticfone/networks/networks_manger.dart';
 import 'package:hapticfone/repository/authenticationrepository.dart';
 import 'package:hapticfone/screens/forgotpassword/resetpasswordscreen.dart';
-import 'package:hapticfone/widgets/TFullScreenLoader.dart';
 
 class ForgotpasswordContriller extends GetxController {
   static ForgotpasswordContriller get instance => Get.find();

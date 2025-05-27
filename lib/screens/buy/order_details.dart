@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:hapticfone/common/widgets/appbar_customized/appbar_customized.dart';
+import 'package:hapticfone/common/widgets/container/bottmnavgitontwobutton.dart';
+import 'package:hapticfone/common/widgets/container/rectangle_container.dart';
+import 'package:hapticfone/common/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
+import 'package:hapticfone/common/widgets/orderdetails_widgets.dart';
 import 'package:hapticfone/screens/buy/order_status.dart';
-import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
-import 'package:hapticfone/widgets/container/bottmnavgitontwobutton.dart';
-import 'package:hapticfone/widgets/container/rectangle_container.dart';
-import 'package:hapticfone/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
-import 'package:hapticfone/widgets/orderdetails_widgets.dart';
 import 'package:lottie/lottie.dart';
 
 class OrderDetails extends StatelessWidget {

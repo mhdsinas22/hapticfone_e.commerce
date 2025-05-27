@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hapticfone/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/textbutton_customized.dart';
 import 'package:hapticfone/controllers/updatename_controller.dart';
 import 'package:hapticfone/screens/profile/eidtciecleavatar.dart';
 import 'package:hapticfone/screens/profile/eidtfiled_widgets.dart';
-import 'package:hapticfone/widgets/textbutton_customized.dart';
 
 class Editprofile extends StatelessWidget {
   const Editprofile({super.key});

@@ -4,11 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/utils.dart';
-import 'package:hapticfone/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/styles/colors/texts/boldtext.dart';
 import 'package:hapticfone/controllers/verifyemailaddress.dart';
 import 'package:hapticfone/images/images.dart';
 import 'package:hapticfone/screens/loginscrren.dart';
-import 'package:hapticfone/widgets/texts/boldtext.dart';
 
 class EmailScreen extends StatelessWidget {
   final String? email;

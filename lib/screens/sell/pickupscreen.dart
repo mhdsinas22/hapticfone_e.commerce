@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
+import 'package:hapticfone/common/widgets/appbar_customized/appbar_customized.dart';
+import 'package:hapticfone/common/widgets/order_pickup_container.dart';
 import 'package:hapticfone/screens/sell/pickup_status.dart';
-import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
-import 'package:hapticfone/widgets/order_pickup_container.dart';
 
 class PickupScreen extends StatelessWidget {
   const PickupScreen({super.key});

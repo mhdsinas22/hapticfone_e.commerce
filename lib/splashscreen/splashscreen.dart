@@ -16,6 +16,7 @@ class _SplashscreenState extends State<Splashscreen> {
     super.initState();
     Future.delayed(Duration(seconds: 2), () {
       Navigator.of(
+        // ignore: use_build_context_synchronously
         context,
       ).pushReplacement(MaterialPageRoute(builder: (context) => LoginScreen()));
     });

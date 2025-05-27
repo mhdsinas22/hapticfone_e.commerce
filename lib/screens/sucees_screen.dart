@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hapticfone/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/styles/colors/texts/boldtext.dart';
 import 'package:hapticfone/images/images.dart';
 import 'package:hapticfone/repository/authenticationrepository.dart';
-import 'package:hapticfone/widgets/texts/boldtext.dart';
 import 'package:lottie/lottie.dart';
 
 class SuceesScreen extends StatelessWidget {

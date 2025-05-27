@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hapticfone/colors/appcolors.dart';
-import 'package:hapticfone/controllers/chipcontrollers.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/container/brand_container.dart';
+import 'package:hapticfone/common/widgets/container/rectangle_container.dart';
+import 'package:hapticfone/common/widgets/custom_bottomnavgitonbar/custombottmnavgbar_forsellside.dart';
+import 'package:hapticfone/common/widgets/custom_elveationbutton.dart';
+import 'package:hapticfone/common/widgets/phone_card.dart';
+import 'package:hapticfone/common/widgets/styles/colors/texts/brand_text.dart';
 import 'package:hapticfone/screens/buy/mobilephone_screen.dart';
+import 'package:hapticfone/screens/buy/serach/search_screen.dart';
 import 'package:hapticfone/screens/buy/smartwatches_scrrem.dart';
-import 'package:hapticfone/widgets/container/brand_container.dart';
-import 'package:hapticfone/widgets/texts/brand_text.dart';
-import 'package:hapticfone/widgets/custom_elveationbutton.dart';
-import 'package:hapticfone/widgets/custom_bottomnavgitonbar/custombottmnavgbar_forsellside.dart';
-import 'package:hapticfone/widgets/phone_card.dart';
-import 'package:hapticfone/widgets/serach_textfiled.dart';
 
 class Homescreen extends StatelessWidget {
-  Homescreen({super.key});
-  final Chipcontrollers cchipcontroles = Get.put(Chipcontrollers());
+  const Homescreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,9 +52,36 @@ class Homescreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 18.h),
-            SerachTextfiled(
-              labeltext: "Search for mobiles,accessories & More",
-              prefix: Icon(Icons.search),
+            InkWell(
+              onTap:
+                  () => Get.to(
+                    SearchScreen(),
+                    transition: Transition.leftToRight,
+                  ),
+              child: RectangleContainer(
+                width: 350,
+                heigth: 50,
+                boxDecoration: BoxDecoration(
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(10.r),
+                ),
+                //    InputDecoration(
+                //     prefixIcon: Icon(Icons.search),
+                //     label: Text("Search for mobiles,accessories & More"),
+                //     border: OutlineInputBorder(
+                //       borderRadius: BorderRadius.all(Radius.circular(12)),
+                //     ),
+                //   ),
+                // ),
+                child: Row(
+                  children: [
+                    SizedBox(width: 8.w),
+                    Icon(Icons.search),
+                    SizedBox(width: 8.w),
+                    Text("Search for mobiles,accessories & More"),
+                  ],
+                ),
+              ),
             ),
             Padding(
               padding: EdgeInsets.all(12.r),

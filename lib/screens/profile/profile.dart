@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/state_manager.dart';
+import 'package:hapticfone/common/widgets/profile_details_container.dart';
 import 'package:hapticfone/controllers/usercontroller.dart';
 import 'package:hapticfone/effects/shimmer_effect.dart';
-import 'package:hapticfone/widgets/profile_details_container.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key, this.sellprofile = false});

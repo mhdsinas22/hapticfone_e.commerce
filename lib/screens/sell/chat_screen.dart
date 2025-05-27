@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
+import 'package:hapticfone/common/widgets/appbar_customized/appbar_customized.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});

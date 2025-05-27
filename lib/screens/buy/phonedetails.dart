@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hapticfone/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/carsoual_silderr.dart';
+import 'package:hapticfone/common/widgets/container/image_container.dart';
+import 'package:hapticfone/common/widgets/container/tcircularcontainer.dart';
+import 'package:hapticfone/common/widgets/favtorieicon.dart';
+import 'package:hapticfone/common/widgets/phone_specifications.dart';
 import 'package:hapticfone/controllers/carsoulcircularcontainercontroller.dart';
-import 'package:hapticfone/widgets/container/tcircularcontainer.dart';
-import 'package:hapticfone/widgets/carsoual_silderr.dart';
-import 'package:hapticfone/widgets/container/image_container.dart';
-import 'package:hapticfone/widgets/phone_specifications.dart';
+import 'package:hapticfone/screens/buy/cart/cartcontroller.dart';
+import 'package:hapticfone/models/cartmodels.dart';
 
 class Phonedetails extends StatelessWidget {
   final List<dynamic> images;
@@ -19,6 +22,7 @@ class Phonedetails extends StatelessWidget {
   final int phonestock;
   final String phonecondtion;
   final double phoneprice;
+  final String id;
   const Phonedetails({
     super.key,
     required this.phonetile,
@@ -31,11 +35,13 @@ class Phonedetails extends StatelessWidget {
     required this.phonecondtion,
     required this.phoneprice,
     required this.images,
+    required this.id,
   });
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(Carsoulcircularcontainercontroller());
+    final cartcontroller = Get.put(CartController());
     return Scaffold(
       bottomNavigationBar: Material(
         elevation: 100,
@@ -63,57 +69,22 @@ class Phonedetails extends StatelessWidget {
               SizedBox(width: 100.w),
               InkWell(
                 onTap: () {
-                  Get.dialog(
-                    AlertDialog(
-                      backgroundColor: Colors.white,
-                      content: SizedBox(
-                        width: 350,
-                        height: 252,
-                        child: Column(
-                          children: [
-                            Image.asset(
-                              "asset/checked.png",
-                              width: 93,
-                              height: 93,
-                              color: Color(0xffB4D97A),
-                            ),
-                            SizedBox(height: 10),
-                            Text(
-                              "Added To Cart!",
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              "Your item has been",
-                              style: TextStyle(color: Appcolors.appgrey),
-                            ),
-                            Text(
-                              "Succesfully added to your cart",
-                              style: TextStyle(color: Appcolors.appgrey),
-                            ),
-                            SizedBox(height: 10),
-                            Container(
-                              width: 200.w,
-                              height: 56.28.h,
-                              decoration: BoxDecoration(
-                                color: Color(0xffB4D97A),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                              child: TextButton(
-                                onPressed: () {
-                                  Get.back();
-                                },
-                                child: Text(
-                                  "Continue shopping",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                  cartcontroller.addToCart(
+                    id,
+                    Cartmodels(
+                      id: id,
+                      mobilemodelname: phonetile,
+                      stock: phonestock,
+                      price: phoneprice,
+                      thumbnail: phoneimage,
+                      // images: [],
+                      condtion: phonecondtion,
+                      ram: phoneram,
+                      brand: phonebrand,
+                      color: phonecolor,
+                      storage: phonestorage,
+                      initalcount: 1,
+                      initalprice: phoneprice,
                     ),
                   );
                 },
@@ -148,12 +119,27 @@ class Phonedetails extends StatelessWidget {
           child: Container(color: Colors.black, height: 1.h),
         ),
         actions: [
+          Favtorieicon(productid: id),
           IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.favorite_outline, size: 35.sp),
-          ),
-          IconButton(
-            onPressed: () {},
+            onPressed:
+                () => cartcontroller.addToCart(
+                  id,
+                  Cartmodels(
+                    id: id,
+                    mobilemodelname: phonetile,
+                    stock: phonestock,
+                    price: phoneprice,
+                    thumbnail: phoneimage,
+                    // images: [],
+                    condtion: phonecondtion,
+                    ram: phoneram,
+                    brand: phonebrand,
+                    color: phonecolor,
+                    storage: phonestorage,
+                    initalcount: 1,
+                    initalprice: phoneprice,
+                  ),
+                ),
             icon: Icon(Icons.add_shopping_cart, size: 25.sp),
           ),
           SizedBox(width: 15.w),

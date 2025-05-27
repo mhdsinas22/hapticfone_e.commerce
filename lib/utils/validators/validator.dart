@@ -16,7 +16,7 @@ class Validator {
 
   // ✅ Empty Field Validator
   static String? validateEmptyText(String? fieldName, String? value) {
-    if (value == null || value.isEmpty) {
+    if (value?.trim() == null || value!.trim().isEmpty) {
       return "$fieldName is Required";
     }
     return null;

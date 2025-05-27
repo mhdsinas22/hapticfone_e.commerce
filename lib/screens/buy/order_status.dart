@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
 import 'package:hapticfone/alertsboxs/logout_alertbox.dart';
-import 'package:hapticfone/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/appbar_customized/appbar_customized.dart';
+import 'package:hapticfone/common/widgets/container/bottmnavgitontwobutton.dart';
+import 'package:hapticfone/common/widgets/container/rectangle_container.dart';
+import 'package:hapticfone/common/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
+import 'package:hapticfone/common/widgets/order_status_seroivenumber_date.dart';
+import 'package:hapticfone/common/widgets/orderproces_widget.dart';
+import 'package:hapticfone/common/widgets/textbutton_customized.dart';
 import 'package:hapticfone/texts/address_text.dart';
-import 'package:hapticfone/widgets/appbar_customized/appbar_customized.dart';
-import 'package:hapticfone/widgets/container/bottmnavgitontwobutton.dart';
-import 'package:hapticfone/widgets/container/rectangle_container.dart';
-import 'package:hapticfone/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
-import 'package:hapticfone/widgets/order_status_seroivenumber_date.dart';
-import 'package:hapticfone/widgets/orderproces_widget.dart';
-import 'package:hapticfone/widgets/textbutton_customized.dart';
 
 class OrderStatus extends StatelessWidget {
   const OrderStatus({super.key});

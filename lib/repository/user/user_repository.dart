@@ -41,12 +41,12 @@ class UserRepository extends GetxController {
       } else {
         return Usermodel.empty();
       }
-    } on FirebaseException catch (e) {
-      throw e;
-    } on FormatException catch (e) {
-      throw e;
-    } on PlatformException catch (e) {
-      throw e;
+    } on FirebaseException {
+      rethrow;
+    } on FormatException {
+      rethrow;
+    } on PlatformException {
+      rethrow;
     } catch (e) {
       throw Exception("Something went wrong: $e");
     }

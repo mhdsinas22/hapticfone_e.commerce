@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
-import 'package:hapticfone/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
+import 'package:hapticfone/common/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
 import 'package:lottie/lottie.dart';
 
 class AnimatonsScreen extends StatelessWidget {
@@ -26,7 +26,7 @@ class AnimatonsScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Lottie.asset(anmation, width: 300.w),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
             Text(
               text,
               style: TextStyle(

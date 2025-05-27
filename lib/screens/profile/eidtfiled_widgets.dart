@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/get_core.dart';
 import 'package:hapticfone/controllers/updatename_controller.dart';
 import 'package:hapticfone/utils/validators/validator.dart';
 
