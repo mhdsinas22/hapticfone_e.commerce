@@ -9,30 +9,34 @@ class PhoneSpecifications extends StatelessWidget {
     required this.phoneram,
     required this.phonestock,
     required this.phonestorage,
+    this.isweb = false,
   });
   final String phoneram;
   final String phonestorage;
   final String phonebrand;
   final String phonecolor;
   final String phonestock;
-
+  final bool isweb;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Row(
           children: [
-            SizedBox(width: 40),
+            SizedBox(width: isweb ? 40 : 40),
             Text(
               "Specifications",
-              style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontSize: isweb ? 10.sp : 16.sp,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ],
         ),
         SizedBox(height: 5.h),
         Row(
           children: [
-            SizedBox(width: 40.w),
+            SizedBox(width: isweb ? 11.w : 40.w),
             RichText(
               text: TextSpan(
                 style: DefaultTextStyle.of(context).style,
@@ -40,7 +44,7 @@ class PhoneSpecifications extends StatelessWidget {
                   TextSpan(
                     text: "RAM:",
                     style: TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: isweb ? 7.sp : 16.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey[400],
                     ),
@@ -48,7 +52,7 @@ class PhoneSpecifications extends StatelessWidget {
                   TextSpan(
                     text: phoneram,
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: isweb ? 7.sp : 16.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
@@ -60,7 +64,7 @@ class PhoneSpecifications extends StatelessWidget {
         ),
         Row(
           children: [
-            SizedBox(width: 40.w),
+            SizedBox(width: isweb ? 11.w : 40.w),
             RichText(
               text: TextSpan(
                 style: DefaultTextStyle.of(context).style,
@@ -68,7 +72,7 @@ class PhoneSpecifications extends StatelessWidget {
                   TextSpan(
                     text: "Stroage:",
                     style: TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: isweb ? 7.sp : 16.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey[400],
                     ),
@@ -76,7 +80,7 @@ class PhoneSpecifications extends StatelessWidget {
                   TextSpan(
                     text: phonestorage,
                     style: TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: isweb ? 7.sp : 16.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
@@ -88,7 +92,7 @@ class PhoneSpecifications extends StatelessWidget {
         ),
         Row(
           children: [
-            SizedBox(width: 40.w),
+            SizedBox(width: isweb ? 11.w : 40.w),
             RichText(
               text: TextSpan(
                 style: DefaultTextStyle.of(context).style,
@@ -96,7 +100,7 @@ class PhoneSpecifications extends StatelessWidget {
                   TextSpan(
                     text: "Brand:",
                     style: TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: isweb ? 7.sp : 16.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey[400],
                     ),
@@ -104,7 +108,7 @@ class PhoneSpecifications extends StatelessWidget {
                   TextSpan(
                     text: phonebrand,
                     style: TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: isweb ? 7.sp : 16.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
@@ -116,7 +120,7 @@ class PhoneSpecifications extends StatelessWidget {
         ),
         Row(
           children: [
-            SizedBox(width: 40.w),
+            SizedBox(width: isweb ? 11.w : 40.w),
             RichText(
               text: TextSpan(
                 style: DefaultTextStyle.of(context).style,
@@ -124,7 +128,7 @@ class PhoneSpecifications extends StatelessWidget {
                   TextSpan(
                     text: "Color:",
                     style: TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: isweb ? 7.sp : 16.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey[400],
                     ),
@@ -132,7 +136,7 @@ class PhoneSpecifications extends StatelessWidget {
                   TextSpan(
                     text: phonecolor,
                     style: TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: isweb ? 7.sp : 16.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
@@ -144,7 +148,7 @@ class PhoneSpecifications extends StatelessWidget {
         ),
         Row(
           children: [
-            SizedBox(width: 40.w),
+            SizedBox(width: isweb ? 11.w : 40.w),
             RichText(
               text: TextSpan(
                 style: DefaultTextStyle.of(context).style,
@@ -152,7 +156,7 @@ class PhoneSpecifications extends StatelessWidget {
                   TextSpan(
                     text: "Stock:",
                     style: TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: isweb ? 7.sp : 16.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey[400],
                     ),
@@ -160,7 +164,7 @@ class PhoneSpecifications extends StatelessWidget {
                   TextSpan(
                     text: phonestock,
                     style: TextStyle(
-                      fontSize: 16.sp,
+                      fontSize: isweb ? 7.sp : 16.sp,
                       fontWeight: FontWeight.bold,
                       color: phonestock.length <= 1 ? Colors.red : Colors.black,
                     ),

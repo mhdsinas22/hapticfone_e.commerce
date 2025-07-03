@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/utils/constants/appcolors.dart';
 import 'package:hapticfone/common/widgets/container/rectangle_container.dart';
-import 'package:hapticfone/screens/sell/itemsadddetails/pickupconfirmtion/pickupslot.dart';
+import 'package:hapticfone/features/store/screens/sell_screen/itemsadddetails/pickupconfirmtion/pickupslot.dart';
 
 class PickupconfirmationHeadside extends StatelessWidget {
   const PickupconfirmationHeadside({

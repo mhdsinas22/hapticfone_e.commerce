@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/common/widgets/cached_Network_image_Custom.dart';
+import 'package:hapticfone/common/widgets/container/rectangle_container.dart';
+import 'package:hapticfone/utils/constants/appcolors.dart';
 
 class OrderPickupContainer extends StatelessWidget {
   final BoxDecoration? boxdecoration;
@@ -13,6 +15,10 @@ class OrderPickupContainer extends StatelessWidget {
   final String orderid;
   final String orderorsellamount;
   final String price;
+  final String phonename;
+  final String phoenstrogae;
+  final String brand;
+  final bool isweb;
   const OrderPickupContainer({
     super.key,
     this.boxdecoration,
@@ -21,138 +27,157 @@ class OrderPickupContainer extends StatelessWidget {
     this.backgroundcolor = Colors.white,
     this.orderandpicktext = "Ordertext",
     this.dateandtimetext = "dateandtime",
-    this.phoenimage = "asset/17.png",
+    this.phoenimage = "assets/17.png",
     this.orderid = "orderid",
     this.orderorsellamount = "order or sell amount",
     this.price = "price",
+    this.phonename = "",
+    this.phoenstrogae = "",
+    this.brand = "",
+    this.isweb = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 20.h),
-        Padding(
-          padding: EdgeInsets.all(10.r),
-          child: Material(
-            elevation: 10,
-            child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20.r),
-              ),
-              width: width.w,
-              height: height.h,
-              child: Column(
-                children: [
-                  SizedBox(height: 10.h),
-                  Row(
-                    children: [
-                      SizedBox(width: 10.w),
-                      Container(
-                        width: 25.w,
-                        height: 30.h,
-                        decoration: BoxDecoration(
-                          color: Appcolors.appbuttongreen,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.done_outlined,
-                          size: 25.sp,
-                          color: Colors.white,
-                        ),
+        Card(
+          color: Appcolors.white,
+          elevation: 5,
+          child: SizedBox(
+            width: isweb ? width.w : null,
+            height: height.h,
+            child: Column(
+              children: [
+                SizedBox(height: 8.h),
+                Row(
+                  children: [
+                    SizedBox(width: isweb ? null : 20.w),
+                    Container(
+                      width: 25.w,
+                      height: 30.h,
+                      decoration: BoxDecoration(
+                        color:
+                            orderandpicktext == "Order Cancelled"
+                                ? Appcolors.error
+                                : Appcolors.appbuttongreen,
+                        shape: BoxShape.circle,
                       ),
-                      SizedBox(width: 10),
-                      Text(
-                        orderandpicktext,
+                      child: Icon(
+                        orderandpicktext == "Order Cancelled"
+                            ? Icons.close
+                            : Icons.done_outlined,
+                        size: isweb ? 8.sp : 25.sp,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(width: 6),
+                    Text(
+                      orderandpicktext,
+                      style: TextStyle(
+                        fontSize: isweb ? 5.sp : 14.sp,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(width: isweb ? 27.w : 40.w),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        dateandtimetext,
                         style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w800,
+                          fontSize: isweb ? 5.sp : 12.sp,
+                          color: Colors.grey.shade700,
                         ),
                       ),
-                    ],
-                  ),
-                  Row(children: [SizedBox(width: 50.w), Text(dateandtimetext)]),
-                  SizedBox(height: 10.h),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(width: 4.w),
-                      Container(width: 330.w, height: 1.h, color: Colors.black),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Image.asset(phoenimage, width: 110.w, height: 82.h),
-                      Column(
+                    ),
+                  ],
+                ),
+                Divider(color: Appcolors.black, thickness: 0.75),
+                Row(
+                  children: [
+                    RectangleContainer(
+                      boxDecoration: BoxDecoration(
+                        // color: Appcolors.appbuttongreen,
+                      ),
+                      width: isweb ? 30 : 70,
+                      heigth: 70,
+                      child: Center(
+                        child: CachedNetworkImageCustom(
+                          imageurl: phoenimage,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                    // VerticalDivider(thickness: 1,),
+                    RectangleContainer(
+                      boxDecoration: BoxDecoration(
+                        // color: Appcolors.appbuttongreen,
+                      ),
+                      width: isweb ? 80 : 150,
+                      heigth: isweb ? 120 : 100,
+                      child: Column(
+                        crossAxisAlignment:
+                            CrossAxisAlignment.start, // key line for alignment
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(height: 20.h),
                           Text(
-                            "Order ID:$orderid",
-                            style: TextStyle(color: Colors.grey),
+                            "Order ID: $orderid",
+                            style: TextStyle(
+                              color: Colors.grey.shade600,
+                              fontSize: isweb ? 5.sp : 10.sp,
+                            ),
                           ),
-                          SizedBox(height: 10.h),
-                          Row(
-                            children: [
-                              Text(
-                                "Apple iphone 13 pro",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 18.sp,
-                                ),
-                              ),
-                              SizedBox(width: 10.w),
-                            ],
+                          SizedBox(height: 10),
+                          Text(
+                            phonename.toUpperCase(),
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: isweb ? 5.sp : 13.sp,
+                            ),
                           ),
-
-                          Row(
-                            children: [
-                              Text(
-                                "256 GB",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 16,
-                                ),
-                              ),
-                              SizedBox(width: 120.w),
-                            ],
+                          Text(
+                            phoenstrogae.toUpperCase(),
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: isweb ? 5.sp : 12.sp,
+                            ),
                           ),
                         ],
                       ),
-                    ],
-                  ),
-                  SizedBox(height: 14.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(width: 4.w),
-                      Container(width: 330.w, height: 1.h, color: Colors.black),
-                    ],
-                  ),
-                  SizedBox(height: 5.h),
-                  Row(
-                    children: [
-                      SizedBox(width: 12.w),
-                      Text(
-                        orderorsellamount,
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w700,
-                        ),
+                    ),
+                  ],
+                ),
+
+                Divider(color: Appcolors.black, thickness: 0.75),
+                SizedBox(height: 1.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(width: isweb ? 8.w : 20.w),
+                    Text(
+                      orderorsellamount,
+                      style: TextStyle(
+                        fontSize: isweb ? 5.sp : 16.sp,
+                        fontWeight: FontWeight.w700,
                       ),
-                      SizedBox(width: 150.w),
-                      Text(
-                        price,
-                        style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w700,
-                        ),
+                    ),
+                    Spacer(),
+                    Text(
+                      "₹$price",
+                      style: TextStyle(
+                        fontSize: isweb ? 5.sp : 16.sp,
+                        fontWeight: FontWeight.w700,
                       ),
-                    ],
-                  ),
-                ],
-              ),
+                    ),
+                    SizedBox(width: 20.w),
+                  ],
+                ),
+              ],
             ),
           ),
         ),

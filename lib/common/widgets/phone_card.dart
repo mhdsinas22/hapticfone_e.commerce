@@ -2,12 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/route_manager.dart';
-import 'package:hapticfone/common/widgets/favtorieicon.dart';
-import 'package:hapticfone/screens/buy/phonedetails.dart';
+import 'package:hapticfone/common/widgets/favtorie_icon.dart';
+import 'package:hapticfone/responsive_screen/responsive_phone_details_screen.dart';
+import 'package:hapticfone/utils/constants/sizes.dart';
 
 class PhoneCard extends StatelessWidget {
-  const PhoneCard({super.key});
-
+  const PhoneCard({super.key, this.isweb = false});
+  final bool isweb;
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
@@ -19,22 +20,32 @@ class PhoneCard extends StatelessWidget {
             child: Align(
               alignment: Alignment.bottomCenter,
               child: SizedBox(
+                width: isweb ? 300.w : null,
+                height: isweb ? null : null,
                 child: GridView(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    mainAxisSpacing: 10,
-                    childAspectRatio: 0.75,
-                  ),
+                  gridDelegate:
+                      isweb
+                          ? SliverGridDelegateWithMaxCrossAxisExtent(
+                            maxCrossAxisExtent: 180,
+                            crossAxisSpacing: Sizes.girdViewSpacing,
+                            childAspectRatio: 0.7,
+                            mainAxisSpacing: Sizes.girdViewSpacing,
+                          )
+                          : SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: Sizes.girdViewSpacing,
+                            childAspectRatio: 0.75,
+                          ),
                   children:
                       snapshot.data!.docs.map((data) {
                         var phoneprices = data["price"];
                         return InkWell(
                           onTap: () {
                             Get.to(
-                              Phonedetails(
+                              ResponsivePhoneDetailsScreen(
                                 id: data["id"],
                                 images: data["images"],
                                 phoneprice: data["price"],
@@ -60,7 +71,10 @@ class PhoneCard extends StatelessWidget {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    Favtorieicon(productid: data["id"]),
+                                    Favtorieicon(
+                                      productid: data["id"],
+                                      isweb: isweb,
+                                    ),
                                   ],
                                 ),
 
@@ -73,21 +87,21 @@ class PhoneCard extends StatelessWidget {
                                 Text(
                                   data["mobiletitle"],
                                   style: TextStyle(
-                                    fontSize: 15.sp,
+                                    fontSize: isweb ? null : 15.sp,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                                 Text(
                                   data["condtion"],
                                   style: TextStyle(
-                                    fontSize: 13.sp,
+                                    fontSize: isweb ? null : 13.sp,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                                 Text(
                                   phoneprices.toString(),
                                   style: TextStyle(
-                                    fontSize: 12.sp,
+                                    fontSize: isweb ? null : 12.sp,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),

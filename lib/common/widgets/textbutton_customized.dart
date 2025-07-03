@@ -20,13 +20,21 @@ class TextbuttonCustomized extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width.w,
-      height: heigth.h,
-      decoration: boxDecoration,
-      child: TextButton(
-        onPressed: onpressed,
-        child: Text(text, style: textStyle),
+    return InkWell(
+      onTap: onpressed,
+      child: Container(
+        width: width.w,
+        height: heigth.h,
+        decoration: boxDecoration,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextButton(
+              onPressed: onpressed,
+              child: Text(text, style: textStyle),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
-import 'package:hapticfone/screens/buy/serach/serachcontroller.dart';
+import 'package:hapticfone/utils/constants/appcolors.dart';
+import 'package:hapticfone/features/store/screens/serach/serach_controller.dart';
 
 class RangesliderWidget extends StatelessWidget {
   const RangesliderWidget({super.key});

@@ -6,12 +6,14 @@ class CustomElveationbutton extends StatelessWidget {
   final VoidCallback onPressed;
   final Color? backgroundcolor;
   final Color? forgroundcolor;
+  final bool isweb;
   const CustomElveationbutton({
     super.key,
     required this.text,
     required this.onPressed,
     this.backgroundcolor,
     this.forgroundcolor,
+    this.isweb = false,
   });
 
   @override

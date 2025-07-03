@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:hapticfone/controllers/usercontroller.dart';
-import 'package:hapticfone/effects/shimmer_effect.dart';
+import 'package:hapticfone/features/authentication/controllers/user_controller.dart';
+import 'package:hapticfone/common/styles/effects/shimmer_effect.dart';
 
 class Profilenameetc extends StatelessWidget {
   final String title;
   final String subtitle;
+  final bool isweb;
   const Profilenameetc({
     super.key,
     required this.title,
     required this.subtitle,
+    this.isweb = false,
   });
 
   @override
@@ -23,9 +25,9 @@ class Profilenameetc extends StatelessWidget {
       } else {
         return Container(
           width: 347.w,
-          height: 84.h,
+          height: isweb ? 80.h : 84.h,
           decoration: BoxDecoration(
-            color: Colors.grey[400],
+            color: Colors.grey[200],
             borderRadius: BorderRadius.circular(10),
           ),
           child: Column(
@@ -41,7 +43,7 @@ class Profilenameetc extends StatelessWidget {
                       Text(
                         title,
                         style: TextStyle(
-                          fontSize: 20.sp,
+                          fontSize: isweb ? 5.sp : 20.sp,
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                         ),
@@ -54,7 +56,7 @@ class Profilenameetc extends StatelessWidget {
                           return Text(
                             subtitle,
                             style: TextStyle(
-                              fontSize: 15.sp,
+                              fontSize: isweb ? 4.sp : 15.sp,
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
                             ),

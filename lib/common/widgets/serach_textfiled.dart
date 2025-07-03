@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hapticfone/common/widgets/styles/colors/appcolors.dart';
+import 'package:hapticfone/utils/constants/appcolors.dart';
 
 class SerachTextfiled extends StatelessWidget {
   final String labeltext;

@@ -18,7 +18,7 @@ class BrandContainer extends StatelessWidget {
       width: 66.w,
       height: 66.h,
       decoration: BoxDecoration(
-        color: Colors.grey[400],
+        color: Colors.white,
         borderRadius: BorderRadius.circular(6),
       ),
       child: Align(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'package:hapticfone/utils/constants/sizes.dart';
+
 class Appbarcustomized extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool centertile;
@@ -8,6 +10,7 @@ class Appbarcustomized extends StatelessWidget implements PreferredSizeWidget {
   final FontWeight fontweight;
   final bool prefresizeneed;
   final Color backgorundcolr;
+  final VoidCallback? onpressd;
   const Appbarcustomized({
     super.key,
     required this.title,
@@ -16,11 +19,15 @@ class Appbarcustomized extends StatelessWidget implements PreferredSizeWidget {
     this.fontweight = FontWeight.bold,
     this.prefresizeneed = true,
     this.backgorundcolr = Colors.white,
+    this.onpressd,
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      iconTheme: const IconThemeData(
+        color: Colors.black,
+      ), // ✅ back arrow black,elevation: 0,
       backgroundColor: backgorundcolr,
       centerTitle: centertile,
       title: Text(
@@ -34,7 +41,7 @@ class Appbarcustomized extends StatelessWidget implements PreferredSizeWidget {
       bottom:
           prefresizeneed == true
               ? PreferredSize(
-                preferredSize: Size.fromHeight(10.h),
+                preferredSize: Size.fromHeight(Sizes.appbarHeigth),
                 child: Container(color: Colors.black, height: 1.w),
               )
               : PreferredSize(preferredSize: preferredSize, child: Container()),
