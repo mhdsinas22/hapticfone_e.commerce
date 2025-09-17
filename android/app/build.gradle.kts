@@ -17,12 +17,12 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.example.hapticfone"
+    namespace = "com.sinas.hapticfone"
     compileSdk = 35
     ndkVersion = "27.0.12077973"
 
         defaultConfig {
-        applicationId = "com.example.hapticfone"
+        applicationId = "com.sinas.hapticfone"
         minSdk = 23
         targetSdk = 35
         versionCode = 2
