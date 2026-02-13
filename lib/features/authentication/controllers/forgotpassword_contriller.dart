@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hapticfone/common/widgets/TFullScreen_Loader.dart';
+import 'package:hapticfone/common/widgets/tfullscreen_loader.dart';
 import 'package:hapticfone/networks/networks_manger.dart';
 import 'package:hapticfone/features/authentication/controllers/authentication_repository.dart';
 import 'package:hapticfone/features/authentication/screens/reset_password_screen.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hapticfone/common/widgets/cached_Network_image_Custom.dart';
+import 'package:hapticfone/common/widgets/cached_network_image_custom.dart';
 import 'package:hapticfone/common/widgets/container/rectangle_container.dart';
 import 'package:hapticfone/utils/constants/appcolors.dart';
 

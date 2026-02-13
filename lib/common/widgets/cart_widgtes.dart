@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hapticfone/common/widgets/TProductTitle_Text.dart';
-import 'package:hapticfone/common/widgets/tCircular_Icon.dart';
+import 'package:hapticfone/common/widgets/tcircular_icon.dart';
 import 'package:hapticfone/common/widgets/tProductPrice_Text.dart';
 import 'package:hapticfone/common/widgets/trounded_Image.dart';
 import 'package:hapticfone/features/store/controllers/cart_controller.dart';

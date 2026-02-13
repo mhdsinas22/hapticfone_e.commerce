@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:hapticfone/common/styles/alertsboxs/logout_alertbox.dart';
 import 'package:hapticfone/common/styles/texts/bold_text.dart';
-import 'package:hapticfone/common/widgets/cached_Network_image_Custom.dart';
+import 'package:hapticfone/common/widgets/cached_network_image_custom.dart';
 import 'package:hapticfone/features/store/controllers/order_controller.dart';
 import 'package:hapticfone/features/store/models/cartmodels.dart';
 import 'package:hapticfone/utils/constants/appcolors.dart';

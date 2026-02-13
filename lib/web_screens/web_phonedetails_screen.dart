@@ -181,7 +181,7 @@ class WebphonedetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     for (int i = 0; i < images.length; i++)
-                      Image_container(
+                      Imagecontainer(
                         boxDecoration: BoxDecoration(
                           border: Border.all(
                             width: 1,

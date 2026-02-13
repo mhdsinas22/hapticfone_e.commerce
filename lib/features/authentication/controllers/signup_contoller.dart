@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hapticfone/common/widgets/TFullScreen_Loader.dart';
+import 'package:hapticfone/common/widgets/tfullscreen_loader.dart';
 import 'package:hapticfone/features/authentication/models/user_models.dart';
 import 'package:hapticfone/networks/networks_manger.dart';
 import 'package:hapticfone/features/authentication/controllers/authentication_repository.dart';
@@ -72,7 +72,7 @@ class Signupcontoller extends GetxController {
         backgroundColor: Appcolors.appbuttongreen,
       );
 
-      // // Move To Verify EMail Screen;
+      // // Move To Verify Email Screen;
       Get.off(() => ResopiveLoginScreen());
     } catch (e) {
       Get.snackbar(

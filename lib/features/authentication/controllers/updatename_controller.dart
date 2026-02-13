@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:hapticfone/features/authentication/controllers/image_controller.dart';
 import 'package:hapticfone/responsive_screen/responsive_myprofile_screen.dart';
 import 'package:hapticfone/utils/constants/appcolors.dart';
-import 'package:hapticfone/common/widgets/TFullScreen_Loader.dart';
+import 'package:hapticfone/common/widgets/tfullscreen_loader.dart';
 import 'package:hapticfone/features/authentication/controllers/user_controller.dart';
 import 'package:hapticfone/networks/networks_manger.dart';
 import 'package:hapticfone/features/authentication/controllers/user_repository.dart';

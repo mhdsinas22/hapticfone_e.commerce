@@ -181,10 +181,6 @@ class Ordercontroller extends GetxController {
     final confirmareddate = dateandtimefomrat();
     final confirmedTime = timeformat();
     try {
-      print("Id:-$id");
-      print("Orderid:-$orderid");
-      print("TOTAL AMOUNT:-$totoalamount");
-      print("Updatestausweork$updateorderstaus");
       var result = Ordermodel(
         id: id,
         addressmodels: addresscontroller.selectedaddress.value,

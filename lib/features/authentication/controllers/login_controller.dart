@@ -1,9 +1,8 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:hapticfone/common/widgets/TFullScreen_Loader.dart';
+import 'package:hapticfone/common/widgets/tfullscreen_loader.dart';
 import 'package:hapticfone/features/authentication/controllers/user_controller.dart';
 import 'package:hapticfone/features/store/controllers/order_controller.dart';
 import 'package:hapticfone/networks/networks_manger.dart';

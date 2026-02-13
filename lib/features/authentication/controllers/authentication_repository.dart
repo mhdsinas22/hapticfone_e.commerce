@@ -9,7 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:hapticfone/common/widgets/TFullScreen_Loader.dart';
+import 'package:hapticfone/common/widgets/tfullscreen_loader.dart';
 import 'package:hapticfone/common/widgets/custom_bottomnavgitonbar/custom_bottomnavgtionbar_home.dart';
 import 'package:hapticfone/features/authentication/controllers/user_repository.dart';
 // import 'package:hapticfone/features/store/screens/sell_screen/animatons_screen.dart';

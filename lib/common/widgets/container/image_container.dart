@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Image_container extends StatelessWidget {
+class Imagecontainer extends StatelessWidget {
   final Image brandimage;
   final Color backgroundcolor;
   final BoxDecoration? boxDecoration;
-  const Image_container({
+  const Imagecontainer({
     super.key,
     required this.brandimage,
     this.backgroundcolor = Colors.grey,
